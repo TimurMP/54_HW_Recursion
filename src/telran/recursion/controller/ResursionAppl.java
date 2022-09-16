@@ -17,22 +17,35 @@ public class ResursionAppl {
         return cgd(b, a % b);
     }
 
-    public static double sqrt(double x, double precision){
-        int res = (int) (x-1);
-        boolean prec = String.valueOf(x).replaceAll(".*\\.", "").length() == precision;
-        if (prec){
-            return x;
-        }else {
-            x = (1/2)*(res+x/res);
-            System.out.println(x);
-            return sqrt(x, precision);
 
-        }
-
-
+    public static void print100(){
+        int from = 1;
+        int to = 100;
+        System.out.println(from);
+        print100();
 
 
     }
+
+
+
+
+//    public static double sqrt(double x, double precision){
+//        int res = (int) (x-1);
+//        boolean prec = String.valueOf(x).replaceAll(".*\\.", "").length() == precision;
+//        if (prec){
+//            return x;
+//        }else {
+//            x = (1/2)*(res+x/res);
+//            System.out.println(x);
+//            return sqrt(x, precision);
+//
+//        }
+//
+//
+//
+//
+//    }
 
 //    public static int cgd (int a, int b){
 //        ArrayList<Integer> resA = new ArrayList<>();
