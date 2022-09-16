@@ -1,55 +1,75 @@
 package telran.recursion.controller;
 
-import java.util.HashSet;
-import java.util.Set;
-
 public class ResursionAppl {
 
     public static void main(String[] args) {
-        System.out.println(40%2);
-        int cgd = cgd(222, 333);
+        int cgd = cgd(40, 50);
         System.out.println("CDG is: " + cgd);
+        System.out.println("Sqrt: " + sqrt(11, 3));
 
 
     }
 
-    public static int cgd (int a, int b){
-        Set<Integer> resA = new HashSet<Integer>();
-        Set<Integer> resB = new HashSet<Integer>();
-
-
-        int dividerA = 2;
-        int dividerB = 2;
-        int resultA = 1;
-        int resultB = 1;
-        while (a!=1){
-            if (a%dividerA==0){
-                a/=dividerA;
-                resA.add(dividerA);
-                System.out.println(a);
-
-            }else {
-                dividerA+=1;
-            }
+    public static int cgd(int a, int b) {
+        if (b == 0) {
+            return a;
         }
-        System.out.println("Finish A");
-        while (b!=1){
-            if (b%dividerB==0){
-                b/=dividerB;
-                resB.add(dividerB);
-                System.out.println(b);
-
-            }else {
-            dividerB+=1;
-        }
-        }
-        resA.retainAll(resB);
-
-        for (Integer integer : resA) {
-            resultA*=integer;
-
-        }
-
-        return resultA;
+        return cgd(b, a % b);
     }
+
+    public static double sqrt(double x, double precision){
+        int res = (int) (x-1);
+        boolean prec = String.valueOf(x).replaceAll(".*\\.", "").length() == precision;
+        if (prec){
+            return x;
+        }else {
+            x = (1/2)*(res+x/res);
+            System.out.println(x);
+            return sqrt(x, precision);
+
+        }
+
+
+
+
+    }
+
+//    public static int cgd (int a, int b){
+//        ArrayList<Integer> resA = new ArrayList<>();
+//        ArrayList<Integer> resB = new ArrayList<>();
+//
+//
+//        int dividerA = 2;
+//        int dividerB = 2;
+//        int resultA = 1;
+//        int resultB = 1;
+//        while (a!=1){
+//            if (a%dividerA==0){
+//                a/=dividerA;
+//                resA.add(dividerA);
+//                System.out.println(a);
+//
+//            }else {
+//                dividerA+=1;
+//            }
+//        }
+//        System.out.println("Finish A");
+//        while (b!=1){
+//            if (b%dividerB==0){
+//                b/=dividerB;
+//                resB.add(dividerB);
+//                System.out.println(b);
+//
+//            }else {
+//            dividerB+=1;
+//        }
+//        }
+//        resA.retainAll(resB);
+//        Set<Integer> resSet = new HashSet<Integer>(resA);
+//        for (Integer integer : resSet) {
+//            resultA*=integer;
+//        }
+//
+//        return resultA;
+//    }
 }
