@@ -5,7 +5,8 @@ public class ResursionAppl {
     public static void main(String[] args) {
         int cgd = cgd(40, 50);
         System.out.println("CDG is: " + cgd);
-        System.out.println("Sqrt: " + sqrt(11, 3));
+        System.out.println("Sqrt: " + sqrt(35, 0.0001));
+        print100();
 
 
     }
@@ -19,7 +20,7 @@ public class ResursionAppl {
 
 
     public static void print100(){
-        int from = 1;
+        int from = 0;
         int to = 100;
         System.out.println(from);
         print100();
@@ -30,22 +31,21 @@ public class ResursionAppl {
 
 
 
-//    public static double sqrt(double x, double precision){
-//        int res = (int) (x-1);
+    public static double sqrt(double x, double precision){
+
+        double b = x;
+        double h = 0;
+        b = (h + b) / 2;
+        h = x / b;
+        if (b - h <= precision){
+            return b;
+        }else {
+            System.out.println(b);
+            return sqrt(b, precision);
+
+        }
 //        boolean prec = String.valueOf(x).replaceAll(".*\\.", "").length() == precision;
-//        if (prec){
-//            return x;
-//        }else {
-//            x = (1/2)*(res+x/res);
-//            System.out.println(x);
-//            return sqrt(x, precision);
-//
-//        }
-//
-//
-//
-//
-//    }
+    }
 
 //    public static int cgd (int a, int b){
 //        ArrayList<Integer> resA = new ArrayList<>();
