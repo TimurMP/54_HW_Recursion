@@ -19,7 +19,7 @@ public class ResursionAppl {
     }
 
 
-    public static void print100(){
+    public static void print100() {
         int from = 0;
         int to = 100;
         System.out.println(from);
@@ -29,17 +29,15 @@ public class ResursionAppl {
     }
 
 
-
-
-    public static double sqrt(double x, double precision){
+    public static double sqrt(double x, double precision) {
 
         double b = x;
-        double h = 0;
-        b = (h + b) / 2;
-        h = x / b;
-        if (b - h <= precision){
+        double y = 0;
+        b = (y + b) / 2;
+        y = x / b;
+        if (b - y <= precision) {
             return b;
-        }else {
+        } else {
             System.out.println(b);
             return sqrt(b, precision);
 
